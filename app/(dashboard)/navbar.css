@@ -1,0 +1,253 @@
+/* Main Container */
+.dashboard {
+  min-height: 100vh;
+  color: white;
+  padding: 1.5rem;
+}
+
+/* Aurora Background Container */
+.aurora-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-color: #020617; /* slate-950 */
+}
+
+/* ========================================
+   Navbar Styles
+   ======================================== */
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 0.85rem 2.5rem;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  opacity: 0.8;
+}
+
+/* Center Navigation */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Upload Button */
+.upload-btn {
+  padding: 0.70rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Divider */
+.navbar-divider {
+  width: 1px;
+  height: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 0.5rem;
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Individual Nav Link */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8; /* slate-400 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  color: #818cf8; /* indigo-400 */
+}
+
+/* Glow Dot Indicator */
+.nav-link .glow-dot {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #818cf8; /* indigo-400 */
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.8),
+              0 0 20px rgba(129, 140, 248, 0.5),
+              0 0 30px rgba(129, 140, 248, 0.3);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Glow Pulse Animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(129, 140, 248, 0.8),
+                0 0 20px rgba(129, 140, 248, 0.5),
+                0 0 30px rgba(129, 140, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(129, 140, 248, 1),
+                0 0 25px rgba(129, 140, 248, 0.7),
+                0 0 35px rgba(129, 140, 248, 0.5);
+  }
+}
+
+/* User Section */
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-btn {
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-btn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+
+.main-content {
+  margin-top: 1.5rem;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Glass Effect */
+.glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .navbar {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .upload-btn {
+    padding: 0.5rem;
+  }
+
+  .upload-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .navbar-divider {
+    margin: 0 0.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    border-radius: 1rem;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-user {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-link::before {
+    content: attr(data-short);
+  }
+}

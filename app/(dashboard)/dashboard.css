@@ -1,0 +1,5 @@
+.nav-link-text {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
